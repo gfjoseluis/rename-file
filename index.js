@@ -2,8 +2,8 @@ import { readdir, rename } from 'fs';
 import { extname, join } from 'path';
 
 // Directorio donde están los archivos MP3
-// C:\\Users\\jhose\\Downloads\\maroyu
-const directorio = 'E:\\America Pop';
+// E:\\America Pop
+const directorio = '-directorio';
 
 // Leer archivos del directorio
 readdir(directorio, (err, archivos) => {
@@ -16,7 +16,8 @@ readdir(directorio, (err, archivos) => {
     // Verificar si el archivo es un MP3
     if (extname(archivo) === '.mp3') {
       // Nuevo nombre del archivo sin el texto específico
-      const nuevoNombre = archivo.replace(/\[SPOTIFY-DOWNLOADER\.COM\] /g, '');
+      // /\[SPOTIFY-DOWNLOADER\.COM\] /g
+      const nuevoNombre = archivo.replace('expesion regular', '');
 
       // Renombrar el archivo
       rename(join(directorio, archivo), join(directorio, nuevoNombre), (err) => {
