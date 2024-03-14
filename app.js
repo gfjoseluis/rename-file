@@ -2,7 +2,8 @@ import { readdir, rename } from 'fs';
 import { join } from 'path';
 
 // Directorio donde se encuentran los archivos
-const directorio = 'E:\\America Pop';
+// E:\\America Pop
+const directorio = '-directorio';
 
 // Leer los archivos del directorio
 readdir(directorio, (err, archivos) => {
